@@ -1,0 +1,2 @@
+# custom alias defined here
+alias fix="stty raw -echo; fg"
