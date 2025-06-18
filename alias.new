@@ -1,2 +1,7 @@
 # custom alias defined here
 alias fix="stty raw -echo; fg"
+alias cls="clear"
+alias tryhackme="sudo openvpn ~/Desktop/0x5h4d0w.ovpn"
+alias htblab="sudo openvpn ~/Desktop/lab_0x5h4d0w.ovpn"
+function mkcd() { mkdir -p -- "$1" && cd -P -- "$1"; }
+alias mkcd="mkcd"
