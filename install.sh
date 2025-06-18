@@ -18,8 +18,7 @@ for ((i=0; i<${#oh_my_zsh}; i++)); do
     sleep 0.05
 done
 echo ""
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
-chmod +x ~/.oh-my-zsh/oh-my-zsh.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && chmod +x ~/.oh-my-zsh/oh-my-zsh.sh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -65,9 +64,9 @@ for ((i=0; i<${#icons_install}; i++)); do
 done
 echo
 
-cd ~/ ; git clone https://github.com/sebastiencs/icons-in-terminal.git
-cd icons-in-terminal;chmod +x install.sh
-./install.sh
+cd ~/ && git clone https://github.com/sebastiencs/icons-in-terminal.git
+cd icons-in-terminal && chmod +x install.sh
+~/icons-in-terminal/install.sh
 
 setup_done="[-] D0ne!"
 for ((i=0; i<${#setup_done}; i++)); do
