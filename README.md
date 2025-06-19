@@ -7,4 +7,4 @@ chmod +x install.sh
 ```
 
 ### This will install zsh oh_my_zsh and tmux and also fully configure it.
-### The alias you want to set can be done through ~/.aliases file
+### The alias you want to set can be done through ~/.alias file
