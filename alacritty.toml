@@ -1,0 +1,152 @@
+# ================================
+#        Alacritty Config
+# ================================
+
+[window]
+dimensions = { columns = 120, lines = 30 }
+opacity = 0.9
+blur = true
+decorations = "Full"
+startup_mode = "Windowed"
+padding = { x = 10, y = 5 }
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+size = 12.0
+offset = { x = 0, y = 0 }
+
+[colors]
+# Dracula theme
+[colors.primary]
+background = "0x282a36"
+foreground = "0xf8f8f2"
+
+[colors.cursor]
+text = "0x282a36"
+cursor = "0xf8f8f2"
+
+[colors.selection]
+text = "0x44475a"
+background = "0x6272a4"
+
+[colors.normal]
+black   = "0x21222c"
+red     = "0xff5555"
+green   = "0x50fa7b"
+yellow  = "0xf1fa8c"
+blue    = "0xbd93f9"
+magenta = "0xff79c6"
+cyan    = "0x8be9fd"
+white   = "0xbbbbbb"
+
+[colors.bright]
+black   = "0x555555"
+red     = "0xff6e6e"
+green   = "0x69ff94"
+yellow  = "0xffffa5"
+blue    = "0xd6acff"
+magenta = "0xff92df"
+cyan    = "0xa4ffff"
+white   = "0xffffff"
+
+[env]
+TERM = "xterm-256color"
+LC_CTYPE = "en_US.UTF-8"
+
+[terminal]
+osc52 = "OnlyCopy"
+
+#[terminal.shell]
+#program = "pwsh.exe"
+# Uncomment this to use WSL:
+# program = "wsl.exe"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[debug]
+render_timer = false
+persistent_logging = false
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "Insert"
+mods = "Shift"
+action = "PasteSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "Equals"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "F11"
+mods = "None"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+chars = "\u000c"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "None"
+action = "ScrollPageUp"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "None"
+action = "ScrollPageDown"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+mode = "~Alt"
+
