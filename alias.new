@@ -1,7 +1,9 @@
 # custom alias defined here
 alias fix="stty raw -echo; fg"
 alias cls="clear"
-alias tryhackme="sudo openvpn ~/Desktop/0x5h4d0w.ovpn"
-alias htblab="sudo openvpn ~/Desktop/lab_0x5h4d0w.ovpn"
+alias tryhackme="sudo openvpn /home/kali/Desktop/labs/thm/0x5h4d0w.ovpn"
+alias htblab="sudo openvpn /home/kali/Desktop/labs/htb/lab_0x5h4d0w.ovpn"
 function mkcd() { mkdir -p -- "$1" && cd -P -- "$1"; }
 alias mkcd="mkcd"
+alias bloodhound="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml up -d"
+alias bloodhound-stop="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml stop"
