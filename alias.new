@@ -5,5 +5,6 @@ alias tryhackme="sudo openvpn /home/kali/Desktop/labs/thm/0x5h4d0w.ovpn"
 alias htblab="sudo openvpn /home/kali/Desktop/labs/htb/lab_0x5h4d0w.ovpn"
 function mkcd() { mkdir -p -- "$1" && cd -P -- "$1"; }
 alias mkcd="mkcd"
+alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 alias bloodhound="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml up -d"
 alias bloodhound-stop="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml stop"
