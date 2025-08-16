@@ -12,3 +12,12 @@ chmod +x install.sh
 Install JetBrainsMono Nerd Font before setting up alacritty.toml from here : https://github.com/ryanoasis/nerd-fonts/releases
 
 AND alacritty setup is not included in install script do it manually
+
+in place of cat use `batcat`
+```sudo apt install bat -y```
+
+Fuzzy finder helpa
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
