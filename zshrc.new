@@ -106,3 +106,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.alias ];then
     source ~/.alias
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+setopt IGNORE_EOF
