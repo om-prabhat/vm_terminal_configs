@@ -8,5 +8,8 @@ function mkcd() { mkdir -p -- "$1" && cd -P -- "$1"; }
 alias mkcd="mkcd"
 alias lab="/home/kali/.tmux/scripts/lab.sh"
 alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
+alias bat='f=$(ff); [ -n "$f" ] && batcat "$f" -P'
+
+# https://vxsnipe.xyz/posts/attack-mapping-with-bloodhound/
 alias bloodhound="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml up -d"
 alias bloodhound-stop="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml stop"
