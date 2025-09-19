@@ -21,3 +21,8 @@ Fuzzy finder helpa
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
+
+powerlevel10k
+```
+https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh
+```
