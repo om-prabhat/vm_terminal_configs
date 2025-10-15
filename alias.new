@@ -2,15 +2,15 @@
 alias fix="stty raw -echo; fg"
 alias cls="clear"
 # sudo setcap cap_net_admin+ep $(which openvpn)
-alias thm="openvpn /home/kali/Desktop/labs/thm/0x5h4d0w.ovpn"
-alias htb="openvpn /home/kali/Desktop/labs/htb/lab_0x5h4d0w.ovpn"
+alias thm="openvpn /home/$(whoami)/Desktop/labs/thm/0x5h4d0w.ovpn"
+alias htb="openvpn /home/$(whoami)/Desktop/labs/htb/lab_0x5h4d0w.ovpn"
 function mkcd() { mkdir -p -- "$1" && cd -P -- "$1"; }
 alias mkcd="mkcd"
-alias lab="/home/kali/.tmux/scripts/lab.sh"
+alias lab="/home/$(whoami)/.tmux/scripts/lab.sh"
 alias ff="fzf --style full --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 alias bat='f=$(ff); [ -n "$f" ] && batcat "$f" -P'
 
 # https://vxsnipe.xyz/posts/attack-mapping-with-bloodhound/
-alias bloodhound="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml up -d"
-alias bloodhound-stop="docker compose -f /home/kali/.config/bloodhound/docker-compose.yml stop"
+alias bloodhound="docker compose -f /home/$(whoami)/.config/bloodhound/docker-compose.yml up -d"
+alias bloodhound-stop="docker compose -f /home/$(whoami)/.config/bloodhound/docker-compose.yml stop"
 alias bloodhound-python="bloodhound-ce-python"
