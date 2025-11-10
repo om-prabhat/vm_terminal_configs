@@ -1,27 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-SESSION="lab"
+source ~/.tmux/scripts/setup.sh
+export TMUX_SESSION=$MACHINE_NAME # every env in current shell session is loaded into the env of the tmux session
+export IP
 
 # Check if session already exists
-tmux has-session -t $SESSION 2>/dev/null
+tmux has-session -t $TMUX_SESSION 2>/dev/null
 if [ $? -eq 0 ]; then
-    tmux attach -t $SESSION
+    tmux attach -t $TMUX_SESSION
     exit 0
 fi
 
 # Create the session and windows first
-tmux new-session -d -s $SESSION -n vpn
-tmux new-window -t $SESSION -n recon
-tmux new-window -t $SESSION -n fuzz
-tmux new-window -t $SESSION -n initial
-tmux new-window -t $SESSION -n final
-tmux new-window -t $SESSION -n extra
+tmux new-session -d -s $TMUX_SESSION -n vpn
+tmux new-window -t $TMUX_SESSION -n recon
+tmux new-window -t $TMUX_SESSION -n start
+#tmux new-window -t $TMUX_SESSION -n initial
+#tmux new-window -t $TMUX_SESSION -n final
+#tmux new-window -t $TMUX_SESSION -n extra
 
 # Split fuzz and recon into 2 panes
-tmux select-window -t $SESSION:fuzz
-tmux split-window -v -t $SESSION:fuzz
-tmux select-window -t $SESSION:recon
-tmux split-window -v -t $SESSION:recon
+tmux select-window -t $TMUX_SESSION:recon
+tmux split-window -v -t $TMUX_SESSION:recon
+#tmux select-window -t $TMUX_SESSION:recon
+#tmux split-window -v -t $TMUX_SESSION:recon
 
 
 # ---- Interactive menu ----
@@ -66,15 +68,21 @@ done
 # Send command to vpn window based on selection
 case "${options[$selected]}" in
     "HTB")
-        tmux send-keys -t $SESSION:vpn "htb" Enter
-        ;;
+    # this will only work if you have an alias of htb e.g. htb=openvpn something.ovpn
+    # and also normally it needs sudo privileges so it will prompt for password in place of connecting
+    # but if it has cap_net_admin+ep (capability) it can connect without having root access.
+        tmux send-keys -t $TMUX_SESSION:vpn "htb" Enter	
+	;;
     "THM")
-        tmux send-keys -t $SESSION:vpn "thm" Enter
+        tmux send-keys -t $TMUX_SESSION:vpn "thm" Enter
         ;;
     "Others")
         # do nothing
         ;;
 esac
 
+# tmux send-keys -t $TMUX_SESSION:recon.0 "tcpscan" Enter
+# tmux send-keys -t $TMUX_SESSION:recon.1 "udpscan" Enter
+
 # Attach to session
-tmux attach -t $SESSION:recon.0
+tmux attach -t $TMUX_SESSION:start
